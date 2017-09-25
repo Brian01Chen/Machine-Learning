@@ -116,11 +116,9 @@ def sigmoid(y):
     return 1.0/(1+ np.exp(-y))
 
 def trainLogic(dataset,ops):
-    train_x = []
-    train_y = []
-    alpha = ops[0]
-    weights = ops[1]
-    step = ops[2]
+    train_x,train_y = [],[]
+    alpha,weight,step = ops[0],ops[1],ops[2]
+
     for data_row in dataset:
         row = [1.0]
         row += data_row[:-1]
