@@ -126,7 +126,12 @@ if __name__ == '__main__':
     dataset = loadCsv(fullname)
     splitRatio = 0.67
     trainingSet , testSet = splitDataset(dataset,splitRatio)
-    summaries = summarizeByClass(trainingSet)
-    predictions = getPredictions (summaries,testSet)
-    accuracy = getAccuracy(testSet, predictions)
-    print (('Accuracy: {0}%').format(accuracy))
+    gini = calcGini(trainingSet)
+    entropy = calcEnt(trainingSet)
+    print (gini)
+    print (entropy)
+
+    #summaries = summarizeByClass(trainingSet)
+    #predictions = getPredictions (summaries,testSet)
+    #accuracy = getAccuracy(testSet, predictions)
+    #print (('Accuracy: {0}%').format(accuracy))
